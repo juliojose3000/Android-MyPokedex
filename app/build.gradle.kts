@@ -64,6 +64,9 @@ dependencies {
     implementation("com.apollographql.apollo:apollo-runtime:4.3.1")
     implementation("com.apollographql.apollo3:apollo-normalized-cache:3.0.0")
 
+    //Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.9.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

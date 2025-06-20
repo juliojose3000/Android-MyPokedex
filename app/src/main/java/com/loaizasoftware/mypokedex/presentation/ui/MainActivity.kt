@@ -13,6 +13,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.apollographql.apollo3.ApolloClient
 import com.loaizasoftware.mypokedex.data.remote.GraphQLService
 import com.loaizasoftware.mypokedex.data.remote.PokemonApi
@@ -20,6 +23,8 @@ import com.loaizasoftware.mypokedex.data.repository_impl.PokemonRepositoryImpl
 import com.loaizasoftware.mypokedex.domain.usecase.GetPokemonListUseCase
 import com.loaizasoftware.mypokedex.presentation.ui.general.UIState
 import com.loaizasoftware.mypokedex.presentation.ui.general.theme.MyPokedexTheme
+import com.loaizasoftware.mypokedex.presentation.ui.pokemon.ListPokemon
+import com.loaizasoftware.mypokedex.presentation.ui.pokemon.ListPokemonScreen
 import com.loaizasoftware.mypokedex.presentation.ui.pokemon.PokemonViewModel
 
 class MainActivity : ComponentActivity() {
@@ -36,16 +41,30 @@ class MainActivity : ComponentActivity() {
         val useCase = GetPokemonListUseCase(repo)
         viewModel = PokemonViewModel(useCase)
 
-        /*setContent {
+        setContent {
             MyPokedexTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-                }
+                NavigationComposable(viewModel)
             }
-        }*/
+        }
     }
 }
 
+@Composable
+fun NavigationComposable(viewModel: PokemonViewModel) {
+
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = "list_pokemon") {
+
+        composable("list_pokemon") {
+
+            ListPokemonScreen(viewModel = viewModel)
+
+        }
+
+    }
+
+}
 
 
 @Preview(showBackground = true)

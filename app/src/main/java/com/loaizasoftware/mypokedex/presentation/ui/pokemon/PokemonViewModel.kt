@@ -1,7 +1,6 @@
 package com.loaizasoftware.mypokedex.presentation.ui.pokemon
 
 import android.util.Log
-import com.loaizasoftware.mypokedex.domain.model.Pokemon
 import com.loaizasoftware.mypokedex.domain.usecase.GetPokemonListUseCase
 import com.loaizasoftware.mypokedex.presentation.ui.general.UIState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,8 +14,6 @@ class PokemonViewModel(private val getPokemonListUseCase: GetPokemonListUseCase)
 
     private val _uiState = MutableStateFlow<UIState>(UIState.Loading)
     private val uiState: StateFlow<UIState> = _uiState.asStateFlow()
-
-    //private val listPokemon = emptyList<Pokemon>()
 
     fun getUiState() = uiState
 
