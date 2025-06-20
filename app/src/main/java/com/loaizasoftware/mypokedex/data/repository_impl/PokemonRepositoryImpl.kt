@@ -1,4 +1,13 @@
 package com.loaizasoftware.mypokedex.data.repository_impl
 
-class PokemonRepositoryImpl {
+import com.loaizasoftware.mypokedex.domain.model.Pokemon
+import com.loaizasoftware.mypokedex.data.remote.PokemonApi
+import com.loaizasoftware.mypokedex.domain.repository.PokemonRepository
+
+class PokemonRepositoryImpl(private val pokemonApi: PokemonApi): PokemonRepository {
+
+    override suspend fun getPokemonList(): List<Pokemon> {
+        return pokemonApi.fetchPokemons()
+    }
+
 }

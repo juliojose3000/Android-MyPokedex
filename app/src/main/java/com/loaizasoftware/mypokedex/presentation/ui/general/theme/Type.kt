@@ -1,4 +1,4 @@
-package com.loaizasoftware.mypokedex.presentation.ui.theme
+package com.loaizasoftware.mypokedex.presentation.ui.general.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

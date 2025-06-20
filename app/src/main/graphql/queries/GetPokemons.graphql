@@ -1,0 +1,7 @@
+query GetPokemons($first: Int!) { # Example: if 'first' is a required variable
+  # Replace 'actualPokemonListName' with the correct field from your schema
+  pokemons(first: $first) {
+    name
+    # other fields like id, image, etc.
+  }
+}

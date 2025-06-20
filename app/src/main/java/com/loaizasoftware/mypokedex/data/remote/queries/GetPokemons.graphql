@@ -1,5 +1,0 @@
-query GetPokemons {
-  pokemons(first: 50) {
-    name
-  }
-}

@@ -1,4 +1,4 @@
-package com.loaizasoftware.mypokedex.presentation.ui.theme
+package com.loaizasoftware.mypokedex.presentation.ui.general.theme
 
 import android.app.Activity
 import android.os.Build

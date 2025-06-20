@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    id("com.apollographql.apollo3") version "3.0.0" //Apollo plugin
 }
 
 android {
@@ -39,6 +41,14 @@ android {
     }
 }
 
+apollo {
+    service("service") {
+        packageName.set("com.loaizasoftware.mypokedex")
+        sourceFolder.set("queries")
+        schemaFile.set(file("src/main/graphql/schema.json"))
+    }
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -52,9 +62,7 @@ dependencies {
 
     //Apollo
     implementation("com.apollographql.apollo:apollo-runtime:4.3.1")
-    implementation("com.apollographql.apollo3:apollo-coroutines-support:3.6.1")
-    implementation("com.apollographql.apollo3:apollo-normalized-cache:3.8.6")
-
+    implementation("com.apollographql.apollo3:apollo-normalized-cache:3.0.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

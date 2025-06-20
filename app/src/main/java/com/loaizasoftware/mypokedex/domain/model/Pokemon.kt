@@ -1,4 +1,3 @@
 package com.loaizasoftware.mypokedex.domain.model
 
-class Pokemon {
-}
+data class Pokemon (val name: String)

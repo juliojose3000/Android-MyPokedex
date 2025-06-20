@@ -1,6 +1,6 @@
 package com.loaizasoftware.mypokedex.data.remote
 
-import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo3.ApolloClient
 
 class GraphQLService {
 
@@ -10,6 +10,6 @@ class GraphQLService {
         .serverUrl(SERVER_URL)
         .build()
 
-    fun getPokemonList() = apolloClient
+    fun getApolloClient() = apolloClient
 
 }
