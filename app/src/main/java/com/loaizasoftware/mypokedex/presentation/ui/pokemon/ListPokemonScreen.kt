@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.loaizasoftware.mypokedex.domain.model.Pokemon
-import com.loaizasoftware.mypokedex.presentation.ui.general.UIState
+import com.loaizasoftware.mypokedex.presentation.mvi.UIState
 import com.loaizasoftware.mypokedex.utils.ext.showToast
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -33,7 +33,7 @@ fun ListPokemonScreen(viewModel: PokemonViewModel) {
         }
     ) { paddingValues ->
 
-        val uiState = viewModel.getUiState().collectAsState()
+        val uiState = viewModel.uiState().collectAsState()
         val context = LocalContext.current
 
         Column(modifier = Modifier.padding(paddingValues)) {
@@ -84,7 +84,7 @@ fun ShowLoader() {
 @Composable
 fun ListPokemon(list: List<Pokemon>) {
 
-    LazyColumn {
+    LazyColumn(modifier = Modifier.padding(16.dp)) {
 
         items(list.size) {
 

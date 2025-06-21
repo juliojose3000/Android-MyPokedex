@@ -1,4 +1,4 @@
-package com.loaizasoftware.mypokedex.presentation.ui.general
+package com.loaizasoftware.mypokedex.presentation.mvi
 
 sealed class UIState {
     data object Loading: UIState()
