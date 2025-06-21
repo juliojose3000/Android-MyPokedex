@@ -2,9 +2,9 @@ package com.loaizasoftware.mypokedex.domain.usecase
 
 import com.loaizasoftware.mypokedex.domain.model.Pokemon
 import com.loaizasoftware.mypokedex.domain.repository.PokemonRepository
-import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GetPokemonListUseCase(private val repository: PokemonRepository) {
+class GetPokemonListUseCase @Inject constructor(private val repository: PokemonRepository) {
 
     suspend fun execute(): List<Pokemon> {
 

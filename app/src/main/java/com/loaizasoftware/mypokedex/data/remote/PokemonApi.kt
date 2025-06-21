@@ -3,8 +3,9 @@ package com.loaizasoftware.mypokedex.data.remote
 import com.apollographql.apollo3.ApolloClient
 import com.loaizasoftware.mypokedex.GetPokemonsQuery
 import com.loaizasoftware.mypokedex.domain.model.Pokemon
+import javax.inject.Inject
 
-class PokemonApi(private val apolloClient: ApolloClient) {
+class PokemonApi @Inject constructor(private val apolloClient: ApolloClient) {
 
     suspend fun fetchPokemons(): List<Pokemon> {
 

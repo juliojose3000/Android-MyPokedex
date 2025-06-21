@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 
     id("com.apollographql.apollo3") version "3.0.0" //Apollo plugin
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -66,6 +68,10 @@ dependencies {
 
     //Compose Navigation
     implementation("androidx.navigation:navigation-compose:2.9.0")
+
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

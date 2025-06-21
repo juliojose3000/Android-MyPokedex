@@ -2,7 +2,7 @@ package com.loaizasoftware.mypokedex.data.remote
 
 import com.apollographql.apollo3.ApolloClient
 
-class GraphQLService {
+/*class GraphQLService {
 
     private val SERVER_URL = "https://graphql-pokemon2.vercel.app/"
 
@@ -12,4 +12,4 @@ class GraphQLService {
 
     fun getApolloClient() = apolloClient
 
-}
+}*/
